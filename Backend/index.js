@@ -29,9 +29,13 @@ app.use(compression())
 app.use(cors({ origin: true }));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
-
+app.use(express.static(path.join(__dirname,'../Frontend/dist')))
 
 app.use('/',videoRouter)
+
+app.get('/',(req,res)=>{
+  res.sendFile(path.join(__dirname,'../Frontend/dist/index.html'))
+})
 
 
 app.listen(PORT, () => {
