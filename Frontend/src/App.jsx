@@ -25,7 +25,7 @@ function App() {
       }
 setLoading(true)
 
-      const res =await axios.post('http://localhost:4000/api/video',formdata,{Headers:{
+      const res =await axios.post('http://13.210.245.134:4000/api/video',formdata,{Headers:{
         'Content-Type':"multipart/form-data"
       },withCreadentials:true})
 
