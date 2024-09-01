@@ -29,15 +29,15 @@ export const videoController = async (req, res, next) => {
     console.log(outputFilePath);
     console.log(temFilePath);
 
-    Ffmpeg(temFilePath)
-      .outputOption([
-        "-crf 23",
-        "-c:v libx264",
-        "-b:v 1000k",
-        "-preset slow",
-        "-c:a aac",
-        "-b:a 192k",
-      ])
+   Ffmpeg(temFilePath)
+  .outputOption([
+    "-crf", "23",
+    "-c:v", "libx264",
+    "-b:v", "1000k",
+    "-preset", "slow",
+    "-c:a", "aac",
+    "-b:a", "192k"
+  ])
       .on("end", () => {
         console.log("process end succefully");
 
